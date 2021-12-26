@@ -12,14 +12,13 @@
     </tr>
   </thead>
 
- 
   
   <tbody>
     <% @apartments.each do |apartment| %>
       <tr>
         <td><%= apartment.number %></td>
-        <td><%= apartment.building_id %></td>
-        <td><%= link_to 'Mostrar', apartment %></td>
+        <td><%= apartment.building.name  %></td>
+        <td> <%= link_to 'Mostrar', apartment %></td>
         <td><%= link_to 'Editar', edit_apartment_path(apartment) %></td>
         <td><%= link_to 'Eliminar', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
