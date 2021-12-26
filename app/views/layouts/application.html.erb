@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BuildingAdministration2</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div style="border: #CCCCCC 1px solid; padding: 10px;">
+      <h1> Menu principal </h1>
+      <p><%= link_to 'Volver al inicio', '/' %></p>
+      <p><%= link_to 'Edificios', '/buildings' %></p>
+      <p><%= link_to 'Departamentos', '/apartments' %></p>
+    </div>
+
+    <div style="border: #CCCCCC 1px solid; padding: 10px;">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>

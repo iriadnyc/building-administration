@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Buildings</h1>
+<%= link_to 'Volver al inicio', '/' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  
+
+  <tbody>
+    <% @buildings.each do |building| %>
+      <tr>
+        <td><%= building.name %></td>
+        <td><%= building.address %></td>
+        <td><%= building.city %></td>
+        <td><%= link_to 'Departamentos', "/apartments?building_id=#{building.id}" %></td>
+        <td><%= link_to 'Mostrar', building %></td>
+        <td><%= link_to 'Editar', edit_building_path(building) %></td>
+        <td><%= link_to 'Eliminar', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear Nuevo Eficio', new_building_path %>
